@@ -1,4 +1,4 @@
-package ru.coffeplanter.beatbox;
+package ru.coffeeplanter.beatbox;
 
 import org.junit.Test;
 
