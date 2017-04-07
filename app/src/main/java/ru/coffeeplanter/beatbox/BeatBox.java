@@ -23,6 +23,7 @@ public class BeatBox {
     private List<Sound> mSounds = new ArrayList<>();
     private SoundPool mSoundPool;
     private float mPlaybackSpeedRate;
+    private String mPlaybackSpeedLabel;
 
     public BeatBox(Context context) {
         mAssets = context.getAssets();
@@ -39,7 +40,8 @@ public class BeatBox {
             //noinspection deprecation
             mSoundPool = new SoundPool(MAX_SOUNDS, AudioManager.STREAM_MUSIC, 0);
         }
-        mPlaybackSpeedRate = 1.0f;
+        setPlaybackSpeedRate(1.0f);
+        setPlaybackSpeedLabel(context.getString(R.string.playback_label));
         loadSounds();
     }
 
@@ -92,6 +94,18 @@ public class BeatBox {
 
     public void setPlaybackSpeedRate(float rate) {
         mPlaybackSpeedRate = rate;
+    }
+
+    public float getPlaybackSpeedRate() {
+        return mPlaybackSpeedRate;
+    }
+
+    public String getPlaybackSpeedLabel() {
+        return mPlaybackSpeedLabel;
+    }
+
+    public void setPlaybackSpeedLabel(String playbackSpeedLabel) {
+        mPlaybackSpeedLabel = playbackSpeedLabel;
     }
 
 }
